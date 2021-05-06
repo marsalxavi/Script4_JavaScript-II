@@ -1,0 +1,17 @@
+<style>
+p {
+  text-align: center;
+}
+
+.navbar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 4;
+}
+
+/* Fer la imatge responsiva total */
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+</style>

@@ -1,0 +1,211 @@
+<!-- ========= El Modal del Login. Inici ========= -->
+
+<!-- Modal body -->
+
+<div class="container">
+    <!-- <h2>Stacked form</h2> -->
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember"> Remember me
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- ========= El Modal del Registre. Inici ========= -->
+
+<!-- Modal body -->
+
+<div class="container">
+    <!-- <h2>Stacked form</h2> -->
+    <form action="/action_page.php">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="pwd1">Password:</label>
+            <input type="password" class="form-control" id="pwd1" placeholder="Enter password" name="pswd1">
+        </div>
+        <div class="form-group">
+            <label for="pwd2">Confirm Password:</label>
+            <input type="password" class="form-control" id="pwd2" placeholder="Enter password" name="pswd2">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+
+<div class="container">
+    <!-- <h1>Form Validation</h1> -->
+    <form method="POST" action="loginat.html" id="myLoginFormId" onsubmit="return validateLogin()"
+      name="myForm">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputEmail">Email</label>
+          <input type="text" name="inputEmail" class="form-control" id="inputEmail">
+          <div class="invalid-feedback" id="errorEmail"></div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword">Contrasenya</label>
+          <input type="password" name="inputPassword" class="form-control" id="inputPassword">
+          <div class="invalid-feedback" id="errorPassword"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            He llegit i acepto la politica de privacitat
+          </label>
+          <div class="invalid-feedback" id="errorCheck"></div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+
+
+
+  <div class="container">
+    <!-- <h1>Form Validation</h1> -->
+    <form method="POST" action="registrat.html" id="myRegisterFormId" onsubmit="return validateRegister()"
+      name="myRegisterForm">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inRegisterEmail">Email</label>
+          <input type="text" name="inRegisterEmail" class="form-control" id="inRegisterEmail">
+          <div class="invalid-feedback" id="registerEmailError"></div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inRegisterPassword">Contrasenya</label>
+          <input type="password" name="inRegisterPassword" class="form-control" id="inRegisterPassword">
+          <div class="invalid-feedback" id="registerPasswordError"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="inAddress">Direcció</label>
+        <input type="text" class="form-control" id="inAddress">
+        <div class="invalid-feedback" id="addressError"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-5">
+          <label for="inProvince">Provincia</label>
+          <select id="inProvince" class="form-control">
+            <option selected value=""></option>
+            <option>Barcelona</option>
+            <option>Girona</option>
+            <option>Tarragona</option>
+            <option>Lleida</option>
+          </select>
+          <div class="invalid-feedback" id="provinceError"></div>
+        </div>
+        <div class="form-group col-md-5">
+          <label for="inCity">Ciutat</label>
+          <input type="text" class="form-control" id="inCity">
+          <div class="invalid-feedback" id="cityError"></div>
+        </div>
+        <div class="form-group col-md-2">
+          <label for="inZip">Codi Postal</label>
+          <input type="text" class="form-control" id="inZip">
+          <div class="invalid-feedback" id="zipError"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            He llegit i acepto la politica de privacitat
+          </label>
+          <div class="invalid-feedback" id="checkError"></div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Registre</button>
+    </form>
+  </div>
+
+
+
+function checkLoginEmail(inEmail, agregateErrors) {
+  if (inEmail.value == "") {
+      inEmail.classList.add("is-invalid");
+      document.getElementById("loginEmailError").textContent = misObligatori;
+      agregateErrors++;
+  } else if (!emailValidate(inEmail.value)) {
+      inEmail.classList.add("is-invalid");
+      document.getElementById("loginEmailError").textContent = misEmail;
+      agregateErrors++;
+  }
+  return agregateErrors;
+}
+function checkLoginPassword(inPassword, agregateErrors) {
+  if (inPassword.value == "") {
+      inPassword.classList.add("is-invalid");
+      document.getElementById("loginPasswordError").textContent = misObligatori;
+      agregateErrors++;
+  }
+  return agregateErrors;
+}
+function checkLoginGridCheck(gridCheck, agregateErrors) {
+  if (!gridCheck.checked) {
+      gridCheck.classList.add("is-invalid");
+      document.getElementById("loginGridCheckError").textContent = misBases;
+      agregateErrors++;
+  }
+  return agregateErrors;
+}
+
+function checkRegisterEmail(inEmail, agregateErrors) {
+  if (inEmail.value == "") {
+      inEmail.classList.add("is-invalid");
+      document.getElementById("registerEmailError").textContent = misObligatori;
+      agregateErrors++;
+  } else if (!emailValidate(inEmail.value)) {
+      inEmail.classList.add("is-invalid");
+      document.getElementById("registerEmailError").textContent = misEmail;
+      agregateErrors++;
+  }
+  return agregateErrors;
+}
+
+function checkRegisterPassword(inPassword, agregateErrors) {
+  if (inPassword.value == "") {
+      inPassword.classList.add("is-invalid");
+      document.getElementById("registerPasswordError").textContent = misObligatori;
+      agregateErrors++;
+  }
+  return agregateErrors;
+}
+
+function checkRegisterGridCheck(gridCheck, agregateErrors) {
+  if (!gridCheck.checked) {
+      gridCheck.classList.add("is-invalid");
+      document.getElementById("registerGridCheckError").textContent = misBases;
+      agregateErrors++;
+  }
+  return agregateErrors;
+}
+
+
+<div class="form-group">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="searchGridCheck">
+    <label class="form-check-label" for="searchGridCheck">
+      He llegit i acepto la politica de privacitat
+    </label>
+    <div class="invalid-feedback" id="searchGridCheckError"></div>
+  </div>
+</div>
+
+
