@@ -9,6 +9,7 @@ const misSearch = "El camp no pot estar buit i ha de tenir 3 caràcters mínim";
 const misMinim8Chars = "El camp ha de tenir 8 caracters minim"
 const misHasCaps = "El camp ha de tenir minim 1 majuscula"
 const misHasNumbers = "El camp ha de tenir minim 1 nombre"
+const misSamePassword = "Les contrasenyes no son iguals"
 
 // Funcions comuns
 // ========= Validació del format d' una adreça de correu
@@ -71,6 +72,15 @@ function checkPassword2(inPassword, countErrors, errorID) {
     } else if (!hasNumbers(inPassword.value)) { //minim 1 nombre
         inPassword.classList.add("is-invalid");
         document.getElementById(errorID).textContent = misHasNumbers;
+        countErrors++;
+    }
+    return countErrors;
+}
+
+function checkSamePasswords(inPassword1, inPassword2, countErrors, errorID) {
+    if (inPassword1.value != inPassword2.value) {
+        inPassword2.classList.add("is-invalid");
+        document.getElementById(errorID).textContent = misSamePassword;
         countErrors++;
     }
     return countErrors;
