@@ -87,8 +87,9 @@ function validateRegister() {
 	const registerGridCheckErrorID = "registerGridCheckError";
 
 	registerErrors = checkEmail(inRegisterEmail, registerErrors, registerEmailErrorID);
-	registerErrors = checkPassword(inRegisterPassword1, registerErrors, registerPasswordErrorID1);
-	registerErrors = checkPassword(inRegisterPassword2, registerErrors, registerPasswordErrorID2);
+	registerErrors = checkPassword2(inRegisterPassword1, registerErrors, registerPasswordErrorID1);
+	registerErrors = checkPassword2(inRegisterPassword2, registerErrors, registerPasswordErrorID2);
+	registerErrors = checkSamePasswords(inRegisterPassword1, inRegisterPassword2, registerErrors, registerPasswordErrorID2)
 	registerErrors = checkAddress(inAddress, registerErrors);
 	registerErrors = checkProvince(inProvince, registerErrors);
 	registerErrors = checkCity(inCity, registerErrors);
