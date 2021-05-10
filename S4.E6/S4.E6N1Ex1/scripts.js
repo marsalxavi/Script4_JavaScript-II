@@ -70,7 +70,7 @@ var users =
  */
 
 function Exercici2() {
-  
+
     // opcio 1
     var nomUser = [];
     nomUser = users.map(function (user) {
@@ -89,4 +89,21 @@ function Exercici2() {
     console.log(nomUser);
     document.write(nomUser);
     return nomUser;
+}
+
+// ===>> Exercici 3 <<===
+// Donat el següent array de strings, mostrar per consola la frase completa usant .reduce()
+var epic = ['a', 'long', 'time', 'ago', 'in a', 'galaxy', 'far far', 'away'];
+// Resultat per consola: 'a long time ago in a galaxy far far away'
+// Nota: no fa falta fer un "join".
+
+function Exercici3() {
+
+    function concatArray(total, num) {
+        return total + ' ' + num;
+    }
+
+    const fraseSencera = epic.reduce(concatArray);
+    console.log(epic);
+    console.log(fraseSencera);
 }
