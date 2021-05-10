@@ -107,3 +107,21 @@ function Exercici3() {
     console.log(epic);
     console.log(fraseSencera);
 }
+
+// ===>> Exercici 4 <<===
+// Crear una funció que accepti un string i retornada aquest string revertit. Nota: Usar funció fletxa (arrow functions), l'operador de prograpación (spread operator) y el mètode .reverse()
+
+function Exercici4() {
+
+    var cotxes = ['Bentley', 'Aston Martin', 'Ferrari', 'Lamborghini', 'Pagani']
+    let cotxesReverse = reverseString(cotxes);
+    console.log(cotxesReverse);
+    document.write(cotxes + '<br>');
+    document.write(cotxesReverse + '<br>');
+
+    function reverseString(inString) {
+        let reverseString = [...cotxes];
+        reverseString.reverse();
+        return reverseString;
+    }
+}
