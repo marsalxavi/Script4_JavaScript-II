@@ -1,3 +1,5 @@
+// ===>> Exercici 1 <<===
+
 // === Funcions amb 3 versions: normal, i 2 Arrow's 
 // === Multiplicacio
 function multiply(num1, num2) {
