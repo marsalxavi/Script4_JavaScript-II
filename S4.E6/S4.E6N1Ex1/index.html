@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Funcions Arrow </title>
+    <h2>Funcions Arrow</h2>
+
+    <script src="functions.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <script>
+        // === Funcions amb 3 versions: normal, i 2 Arrow's 
+        // === Multiplicacio
+        var num1 = 7, num2 = 8;
+        for (i = 1; i < 4; i++) {
+            var result = 0;
+            switch (i) {
+                case 1:
+                    result = 'noArrow=' + multiply(num1, num2) + "<br>";
+                case 2:
+                    result = 'Arrow1=' + multiplyArrow1(num1, num2) + ' <br> ';
+                case 3:
+                    result = "Arrow2=" + multiplyArrow2(num1, num2) + ' <br> ';
+                default:
+            }
+            console.log(result);
+            document.write(result);
+        }
+        // === Farenheit to Celsius
+        var num1 = 32;
+        for (i = 1; i < 4; i++) {
+            var result = 0;
+            switch (i) {
+                case 1:
+                    result = 'noArrow=' + toCelsius(num1) + "<br>";
+                case 2:
+                    result = 'Arrow1=' + toCelsiusArrow1(num1) + ' <br> ';
+                case 3:
+                    result = "Arrow2=" + toCelsiusArrow2(num1) + ' <br> ';
+                default:
+            }
+            console.log(result);
+            document.write(result);
+        }
+
+
+        // === Salutacio
+        var who = "Luis";
+        for (i = 1; i < 4; i++) {
+            var result = "";
+            switch (i) {
+                case 1:
+                    result = 'noArrow=' + greet(who) + "<br>";
+                case 2:
+                    result = 'Arrow1=' + greetArrow1(who) + ' <br> ';
+                case 3:
+                    result = "Arrow2=" + greetArrow2(who) + ' <br> ';
+                default:
+            }
+            // console.log(result);
+            // document.write(result);
+        }
+    </script>
+</body>
+<footer>
+
+</footer>
+
+</html>
