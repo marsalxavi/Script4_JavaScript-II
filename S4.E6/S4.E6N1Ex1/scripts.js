@@ -112,16 +112,36 @@ function Exercici3() {
 // Crear una funció que accepti un string i retornada aquest string revertit. Nota: Usar funció fletxa (arrow functions), l'operador de prograpación (spread operator) y el mètode .reverse()
 
 function Exercici4() {
-
     var cotxes = ['Bentley', 'Aston Martin', 'Ferrari', 'Lamborghini', 'Pagani']
-    let cotxesReverse = reverseString(cotxes);
-    console.log(cotxesReverse);
-    document.write(cotxes + '<br>');
-    document.write(cotxesReverse + '<br>');
 
-    function reverseString(inString) {
-        let reverseString = [...cotxes];
+    // Opció 1 sense Funció Arrow
+    function reverseString1(inString) {
+        let reverseString = [...inString];
         reverseString.reverse();
         return reverseString;
     }
+
+    // Opció 2 Funció Arrow #1
+    var reverseString2 = (inString) => {
+        let reverseString = [...inString];
+        reverseString.reverse();
+        return reverseString;
+    }
+
+    // Opció 3 Funció Arrow #2
+    var reverseString3 = (inString) => [...inString].reverse();
+
+    // Crida a la funció
+    var opcio = 3;
+    var fnName = 'reverseString' + opcio;
+    var cotxesReverse = eval(fnName)(cotxes);
+
+    // Print
+    console.log(cotxes);
+    console.log(cotxesReverse);
+    document.write('Opcio: ' + opcio + '<br>');
+    document.write('Normal: <br>');
+    document.write(cotxes + '<br>');
+    document.write('Reverse: <br>');
+    document.write(cotxesReverse + '<br>');
 }
