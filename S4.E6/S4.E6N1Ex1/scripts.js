@@ -110,7 +110,6 @@ function Exercici3() {
 
 // ===>> Exercici 4 <<===
 // Crear una funció que accepti un string i retornada aquest string revertit. Nota: Usar funció fletxa (arrow functions), l'operador de prograpación (spread operator) y el mètode .reverse()
-
 function Exercici4() {
     var cotxes = ['Bentley', 'Aston Martin', 'Ferrari', 'Lamborghini', 'Pagani']
 
@@ -144,4 +143,28 @@ function Exercici4() {
     document.write(cotxes + '<br>');
     document.write('Reverse: <br>');
     document.write(cotxesReverse + '<br>');
+}
+
+// ===>> Exercici 5 <<===
+// Modifica la funció 'a()' per a reemplaçar la promesa per aync/await:
+// function b() {
+//    // tasques asíncrones , que triguen una estona..
+// }
+// funtion a() {
+//    // Ens esperem que la funció b acabi
+//    b().then() = > {
+//          doMoreWork();
+//    }
+// }
+
+function b() {
+   // tasques asíncrones , que triguen una estona..
+}
+function Exercici5() {
+    async funtion a() {
+        // Ens esperem que la funció b acabi
+        await b().then() = > {
+            await doMoreWork();
+        }
+    }
 }
