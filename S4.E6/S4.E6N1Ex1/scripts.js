@@ -158,13 +158,56 @@ function Exercici4() {
 // }
 
 function b() {
-   // tasques asíncrones , que triguen una estona..
+    // tasques asíncrones , que triguen una estona..
 }
 function Exercici5() {
-    async funtion a() {
+    async function a() {
         // Ens esperem que la funció b acabi
-        await b().then() = > {
-            await doMoreWork();
+        b().then = () => {
+            doMoreWork();
         }
+    }
+}
+
+// ===>> Exercici 6 <<===
+// Tenim un array de tasques i volem aconseguir un array que contingui únicament els noms de les tasques. 
+// - Usar.forEach() per obtenir aquest array.
+// - Usar.map() per obtenir aquest array.
+
+function Exercici6() {
+    var tasks = [
+        {
+            'name': 'Start React web',
+            'duration': 120
+        },
+        {
+            'name': 'Work out',
+            'duration': 60
+        },
+        {
+            'name': 'Procrastinate on facebook',
+            'duration': 240
+        }
+    ];
+    // Opcio .forEach();
+    var tasksNames1 = [];
+    tasks.forEach(fTasksNames1);
+    console.log(tasksNames1);
+    document.write('Opcio .forEach() <br>');
+    document.write(tasksNames1 + '<br>');
+
+    function fTasksNames1(item, index) {
+        tasksNames1.push(item.name);
+    }
+
+    //Opcio .map()
+    // var tasksNames2 = [];
+    var tasksNames2 = tasks.map(fTasksNames2);
+    console.log(tasksNames2);
+    document.write('Opcio .map() <br>');
+    document.write(tasksNames2 + '<br>');
+
+    function fTasksNames2(item, index) {
+        return item.name;
     }
 }
